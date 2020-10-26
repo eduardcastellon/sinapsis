@@ -1,6 +1,5 @@
 <odoo>
     <data>
-
         <record id="res_partner_view_form_nfs" model="ir.ui.view">
             <field name="name">res.partner.view.form.nfs</field>
             <field name="model">res.partner</field>
@@ -12,6 +11,5 @@
                   </xpath>
             </field>
         </record>
-
     </data>
 </odoo>
