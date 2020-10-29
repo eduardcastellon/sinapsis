@@ -8,4 +8,4 @@ from odoo.exceptions import UserError
 class AccountInvoiceSendForm(models.TransientModel):
     _inherit = ['account.invoice.send.form']
 
-    partner_ids = fields.Float(string='Emails de faturación', required=False)
+    partner_ids = fields.Char(string='Emails de faturación', required=False)
