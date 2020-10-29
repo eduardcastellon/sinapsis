@@ -8,4 +8,4 @@ from datetime import date
 class ResPartner(models.Model):
     _inherit = ['res.partner']
 
-    email_facturacion = fields.Bool(string='Email de faturación', required=False)
+    email_facturacion = fields.Boolean(string='Email de faturación', required=False)
