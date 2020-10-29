@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="res_partner_view_form_nfs" model="ir.ui.view">
+            <field name="name">res.partner.view.form.nfs</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority">30</field>
+            <field name="arch" type="xml">
+                  <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="email_facturacion" widget='checkbox'/>
+                  </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
