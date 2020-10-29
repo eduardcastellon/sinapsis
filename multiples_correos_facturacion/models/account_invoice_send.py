@@ -5,7 +5,7 @@ from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
 
-class AccountInvoiceSendForm(models.TransientModel):
-    _inherit = ['account.invoice.send.form']
+class AccountInvoiceSend(models.TransientModel):
+    _inherit = ['account.invoice.send']
 
     partner_ids = fields.Char(string='Emails de faturación', required=False)
