@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OCA/account-financial-tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OCA/bank-payment" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OCA/community-data-files" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OCA/l10n-spain" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OCA/partner-contact" vcs="Git" />
+  </component>
+</project>
