@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="805d7a30-83d8-44ae-9e88-0145f05c9844" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiples_correos_facturacion/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiples_correos_facturacion/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiples_correos_facturacion/models/account_invoice_send.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerta_facturacion_atrasada/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerta_facturacion_atrasada/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,10 +70,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="561" y="246" width="1018" height="588" key="find.popup" timestamp="1603984296739">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="421" y="205" width="763" height="490" key="find.popup" timestamp="1604186790913">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="421" y="205" width="763" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1603487523781" />
+    <state x="421" y="205" width="763" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1604186790913" />
+    <state x="421" y="205" width="763" height="490" key="find.popup/0.23.1440.810@0.23.1440.810" timestamp="1604186744005" />
     <state x="561" y="246" width="1018" height="588" key="find.popup/1920.0.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1603984296739" />
   </component>
 </project>
