@@ -9,21 +9,88 @@ from odoo.tools.safe_eval import safe_eval
 from odoo.exceptions import UserError
 
 
+class Notification(models.Model):
+    _inherit = ['mail.notification']
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        nuevos_valores_para_notificar = []
+        if vals_list:
+            for notification in vals_list:
+                message_id = notification['mail_message_id']
+                message = self.env['mail.message'].search([('id', '=', message_id)])
+                if message:
+                    if message.model == 'account.move':
+                        invoice = self.env['account.move'].search([('id', '=', message.res_id)])
+                        id_cliente = invoice.partner_id.id
+                        is_company = invoice.partner_id.is_company
+
+                        # raise UserError(_(is_company))
+
+                        if notification['res_partner_id'] != id_cliente:
+                            nuevos_valores_para_notificar.append(notification)
+        res = super(Notification, self).create(nuevos_valores_para_notificar)
+        return res
+
+
+class Message(models.Model):
+    _inherit = ['mail.message']
+
+    @api.model_create_multi
+    def create(self, values_list):
+        res = super(Message, self).create(values_list)
+        # res.write({'notified_partner_ids': [616]})
+        return res
+
+
+class MailThread(models.AbstractModel):
+    _inherit = ['mail.thread']
+
+    def _notify_thread(self, message, msg_vals=False, **kwargs):
+        nuevos_argumentos = {'partners': [], 'chanels': []}
+
+        res = super(MailThread, self)._notify_thread(message, msg_vals=False, **kwargs)
+
+        if (message.model == 'account.move'):
+            invoice = self.env['account.move'].search([('id', '=', message.res_id)])
+            id_cliente = invoice.partner_id.id
+            is_company = invoice.partner_id.is_company
+            for receptor in res['partners']:
+                if receptor['id'] != id_cliente:
+                    nuevos_argumentos['partners'].append(receptor)
+
+        return res
+
+
+class AccountInvoiceSend(models.TransientModel):
+    _inherit = ['account.invoice.send']
+
+    @api.model
+    def default_get(self, fields):
+
+        res = super(AccountInvoiceSend, self).default_get(fields)
+
+        invoice_ids = res['invoice_ids']
+        if invoice_ids:
+            invoices = self.env['account.move'].browse(invoice_ids)
+            for invoice in invoices:
+                seguidores_finales = []
+                id_cliente = invoice.partner_id.id
+                is_company = invoice.partner_id.is_company
+                if is_company == True:
+                    seguidores = invoice.message_follower_ids
+                    if seguidores:
+                        for seguidor in seguidores:
+                            if seguidor.partner_id.id != id_cliente:
+                                seguidores_finales.append(seguidor.id)
+                self.env['account.move'].search([('id', '=', invoice.id)]).write(
+                    {'message_follower_ids': seguidores_finales})
+
+        return res
+
+
 class MailComposer(models.TransientModel):
     _inherit = ['mail.compose.message']
-
-    # partner_ids = fields.Char(string='Emails de faturación', required=False)
-    #     partner_ids = fields.Many2many(
-    #         'res.partner', 'mail_compose_message_res_partner_rel',
-    #         'wizard_id', 'partner_id', 'Additional Contacts')
-
-    #     @api.model
-    #     def default_get(self, fields):
-    #         res = super(MailComposer, self).default_get(fields)
-    #         raise UserError(_(res))
-    #         partner = self.env['res.partner'].search([('id','=', 616)])
-    #         res['partner_ids'] = [partner.id]
-    #         return res
 
     def get_mail_values(self, res_ids):
         destinatarios = []
@@ -48,27 +115,3 @@ class MailComposer(models.TransientModel):
         res = super(MailComposer, self).get_mail_values(res_ids)
 
         return res
-
-# class AccountInvoiceSend(models.TransientModel):
-#     _inherit = ['account.invoice.send']
-
-#     @api.model
-#     def send_and_print_action(self):
-#         res = super(AccountInvoiceSend, self).send_and_print_action()
-
-#         raise UserError(_(res))
-
-# class Message(models.Model):
-#     _inherit = ['mail.message']
-
-#     def write(self, vals):
-#         partner = self.env['res.partner'].search([('id','=', 616)])
-#         vals['notified_partner_ids'] = partner.id
-#         res = super(Message, self).write(vals)
-# #         raise UserError(_(vals.notified_partner_ids))
-# #         self.notified_partner_ids = [616]
-# #         res = super(Message, self).default_get(fields)
-# #         raise UserError(_(res))
-# #         res['partner_ids'] = [partner.id]
-
-#         return res
