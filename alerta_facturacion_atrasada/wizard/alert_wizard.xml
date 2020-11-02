@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <record id="alert_debt_wizard_form" model="ir.ui.view" >
+        <record id="alert_wizard_form" model="ir.ui.view" >
             <field name="name">Atención</field>
             <field name="model">alert.wizard</field>
             <field name="type">form</field>

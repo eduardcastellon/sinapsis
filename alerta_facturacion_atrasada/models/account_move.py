@@ -35,3 +35,5 @@ class AccountMove(models.Model):
                             'type': 'ir.actions.act_window',
                             'context': {'invoice': ultima_factura_publicada}
                             }
+        result = super(AccountMove, self).action_post()
+        return result
