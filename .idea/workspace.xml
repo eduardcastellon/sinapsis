@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="805d7a30-83d8-44ae-9e88-0145f05c9844" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alerta_facturacion_atrasada/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerta_facturacion_atrasada/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,22 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="805d7a30-83d8-44ae-9e88-0145f05c9844" name="Default Changelist" comment="" />
@@ -62,12 +77,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="421" y="205" width="763" height="490" key="find.popup" timestamp="1604186790913">
