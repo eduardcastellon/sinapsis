@@ -7,7 +7,7 @@
             <field name="priority">30</field>
             <field name="arch" type="xml">
                   <xpath expr="//field[@name='category_id']" position="after">
-                    <field name="emails_facturacion"/>
+                    <field name="email_facturacion" widget='checkbox'/>
                   </xpath>
             </field>
         </record>

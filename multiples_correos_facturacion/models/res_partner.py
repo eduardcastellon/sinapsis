@@ -3,11 +3,9 @@
 
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
-
+from datetime import date
 
 class ResPartner(models.Model):
     _inherit = ['res.partner']
 
-    emails_facturacion = fields.Char(
-        string='Emails de facturación',
-        required=False)
+    email_facturacion = fields.Boolean(string='Email de faturación', required=False)
