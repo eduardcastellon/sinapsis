@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="805d7a30-83d8-44ae-9e88-0145f05c9844" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerta_facturacion_atrasada/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerta_facturacion_atrasada/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerta_facturacion_atrasada/models/account_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerta_facturacion_atrasada/models/account_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerta_facturacion_atrasada/wizard/alert_wizard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/alerta_facturacion_atrasada/wizard/alert_wizard.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +49,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="805d7a30-83d8-44ae-9e88-0145f05c9844" name="Default Changelist" comment="" />

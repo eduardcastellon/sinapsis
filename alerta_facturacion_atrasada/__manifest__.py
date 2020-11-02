@@ -18,6 +18,7 @@
 
     # always loaded
     'data': [
+        'wizard/alert_wizard.xml',
         #'security/ir.model.access.csv',
         # 'views/views.xml',
     ]
