@@ -58,7 +58,6 @@ class MailThread(models.AbstractModel):
             for receptor in res['partners']:
                 if receptor['id'] != id_cliente:
                     nuevos_argumentos['partners'].append(receptor)
-        raise UserError(_(nuevos_argumentos))
         res['partners'] = nuevos_argumentos
         return res
 
@@ -113,7 +112,6 @@ class MailComposer(models.TransientModel):
 
         self.partner_ids = destinatarios
         res = super(MailComposer, self).send_mail()
-
         return res
         # self.partner_ids = _obtener_destinatarios()
         # raise UserError(_(self.partner_ids))
@@ -136,7 +134,7 @@ class MailComposer(models.TransientModel):
                             if contacto.email_facturacion == True:
                                 destinatarios.append(contacto.id)
 
-            self.partner_ids = destinatarios
+            self.partner_ids = [164]
 
         #             self.notified_partner_ids = destinatarios
         res = super(MailComposer, self).get_mail_values(res_ids)
