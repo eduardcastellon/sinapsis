@@ -98,7 +98,7 @@ class MailComposer(models.TransientModel):
         destinatarios = []
         self.partner_ids = []
 
-        invoices = self.env[self.model].browse(self.res_ids)
+        invoices = self.env[self.model].browse(self.res_id)
         if invoices:
             for invoice in invoices:
                 if (invoice.partner_id.email_facturacion == True):
