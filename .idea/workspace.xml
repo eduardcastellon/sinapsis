@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="39de41c4-fe73-41f3-a852-d82e591e3e63" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiples_correos_facturacion/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiples_correos_facturacion/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +25,13 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39de41c4-fe73-41f3-a852-d82e591e3e63" name="Default Changelist" comment="" />
+      <created>1604432753681</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604432753681</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

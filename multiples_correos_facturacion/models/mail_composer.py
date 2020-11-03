@@ -101,13 +101,13 @@ class MailComposer(models.TransientModel):
         invoices = self.env[self.model].browse(self.res_id)
         if invoices:
             for invoice in invoices:
-                if (invoice.partner_id.type == 'invoice'):
+                if (invoice.partner_id.email_facturacion == True):
                     destinatarios.append(invoice.partner_id.id)
 
                 contactos_cliente = invoice.partner_id.child_ids
                 if contactos_cliente:
                     for contacto in contactos_cliente:
-                        if contacto.type == 'invoice':
+                        if contacto.email_facturacion == True:
                             destinatarios.append(contacto.id)
 
         self.partner_ids = destinatarios
@@ -127,13 +127,13 @@ class MailComposer(models.TransientModel):
             invoices = self.env[self.model].browse(res_ids)
             if invoices:
                 for invoice in invoices:
-                    if (invoice.partner_id.type == 'invoice'):
+                    if (invoice.partner_id.email_facturacion == True):
                         destinatarios.append(invoice.partner_id.id)
 
                     contactos_cliente = invoice.partner_id.child_ids
                     if contactos_cliente:
                         for contacto in contactos_cliente:
-                            if contacto.type == 'invoice':
+                            if contacto.email_facturacion == True:
                                 destinatarios.append(contacto.id)
 
             self.partner_ids = destinatarios
@@ -149,13 +149,13 @@ class MailComposer(models.TransientModel):
             invoices = self.env[self.model].browse(res_ids)
             if invoices:
                 for invoice in invoices:
-                    if (invoice.partner_id.type == 'invoice'):
+                    if (invoice.partner_id.email_facturacion == True):
                         destinatarios.append(invoice.partner_id.id)
 
                     contactos_cliente = invoice.partner_id.child_ids
                     if contactos_cliente:
                         for contacto in contactos_cliente:
-                            if contacto.type == 'invoice':
+                            if contacto.email_facturacion == True:
                                 destinatarios.append(contacto.id)
 
             return destinatarios
