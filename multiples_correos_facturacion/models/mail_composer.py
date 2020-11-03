@@ -46,6 +46,7 @@ class Message(models.Model):
 class MailThread(models.AbstractModel):
     _inherit = ['mail.thread']
 
+    @api.returns('mail.message', lambda value: value.id)
     def message_post(self, *,
                      body='', subject=None, message_type='notification',
                      email_from=None, author_id=None, parent_id=False,
@@ -66,12 +67,13 @@ class MailThread(models.AbstractModel):
 
         partners_ids = nuevos_partners
 
-        res = super(MailThread, self).message_post(body='', subject=None, message_type='notification',
-                                                   email_from=None, author_id=None, parent_id=False,
-                                                   subtype_id=False, subtype=None, partner_ids=None, channel_ids=None,
-                                                   attachments=None, attachment_ids=None,
-                                                   add_sign=True, record_name=False,
-                                                   **kwargs)
+        res = super(MailThread, self).message_post(
+            body='', subject=None, message_type='notification',
+            email_from=None, author_id=None, parent_id=False,
+            subtype_id=False, subtype=None, partner_ids=None, channel_ids=None,
+            attachments=None, attachment_ids=None,
+            add_sign=True, record_name=False,
+            **kwargs)
         return res
 
     def _notify_thread(self, message, msg_vals=False, **kwargs):
