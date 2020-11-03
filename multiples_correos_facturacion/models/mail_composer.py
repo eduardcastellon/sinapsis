@@ -38,8 +38,6 @@ class Message(models.Model):
 
     @api.model_create_multi
     def create(self, values_list):
-        self.partner_ids = [164]
-
         res = super(Message, self).create(values_list)
         # res.write({'notified_partner_ids': [616]})
         return res
@@ -60,7 +58,7 @@ class MailThread(models.AbstractModel):
             for receptor in res['partners']:
                 if receptor['id'] != id_cliente:
                     nuevos_argumentos['partners'].append(receptor)
-
+        res['partners'] = nuevos_argumentos
         return res
 
 
