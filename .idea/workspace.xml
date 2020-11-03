@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39de41c4-fe73-41f3-a852-d82e591e3e63" name="Default Changelist" comment="" />
+    <list default="true" id="39de41c4-fe73-41f3-a852-d82e591e3e63" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiples_correos_facturacion/models/mail_composer.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
