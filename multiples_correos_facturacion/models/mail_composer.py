@@ -58,6 +58,7 @@ class MailThread(models.AbstractModel):
             for receptor in res['partners']:
                 if receptor['id'] != id_cliente:
                     nuevos_argumentos['partners'].append(receptor)
+        raise UserError(_(nuevos_argumentos))
         res['partners'] = nuevos_argumentos
         return res
 
