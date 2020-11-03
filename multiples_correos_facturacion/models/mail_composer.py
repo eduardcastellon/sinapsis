@@ -58,13 +58,15 @@ class MailThread(models.AbstractModel):
 
         if (self.partner_id.email_facturacion == True):
             nuevos_partners.append(self.partner_id.id)
-            contactos_cliente = self.partner_id.child_ids
-            if contactos_cliente:
-                for contacto in contactos_cliente:
-                    if contacto.email_facturacion == True:
-                        nuevos_partners.append(contacto.id)
+        contactos_cliente = self.partner_id.child_ids
+        if contactos_cliente:
+            for contacto in contactos_cliente:
+                if contacto.email_facturacion == True:
+                    nuevos_partners.append(contacto.id)
 
         partners_ids = nuevos_partners
+
+        raise UserError(_(partners_ids))
 
         res = super(MailThread, self).message_post(body='', subject=None, message_type='notification',
                                                    email_from=None, author_id=None, parent_id=False,
