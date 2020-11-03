@@ -66,8 +66,6 @@ class MailThread(models.AbstractModel):
 
         partners_ids = nuevos_partners
 
-        raise UserError(_(partners_ids))
-
         res = super(MailThread, self).message_post(body='', subject=None, message_type='notification',
                                                    email_from=None, author_id=None, parent_id=False,
                                                    subtype_id=False, subtype=None, partner_ids=None, channel_ids=None,
