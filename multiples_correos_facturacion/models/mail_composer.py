@@ -95,7 +95,22 @@ class MailComposer(models.TransientModel):
     _inherit = ['mail.compose.message']
 
     def send_mail(self, auto_commit=False):
-        self.partner_ids = [164]
+        destinatarios = []
+        self.partner_ids = []
+
+        invoices = self.env[self.model].browse(self.res_ids)
+        if invoices:
+            for invoice in invoices:
+                if (invoice.partner_id.email_facturacion == True):
+                    destinatarios.append(invoice.partner_id.id)
+
+                contactos_cliente = invoice.partner_id.child_ids
+                if contactos_cliente:
+                    for contacto in contactos_cliente:
+                        if contacto.email_facturacion == True:
+                            destinatarios.append(contacto.id)
+
+        self.partner_ids = destinatarios
 
         res = super(MailComposer, self).send_mail()
 
