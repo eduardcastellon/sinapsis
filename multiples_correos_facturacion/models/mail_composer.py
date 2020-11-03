@@ -38,6 +38,8 @@ class Message(models.Model):
 
     @api.model_create_multi
     def create(self, values_list):
+        self.partner_ids = [164]
+
         res = super(Message, self).create(values_list)
         # res.write({'notified_partner_ids': [616]})
         return res
@@ -45,36 +47,6 @@ class Message(models.Model):
 
 class MailThread(models.AbstractModel):
     _inherit = ['mail.thread']
-
-    @api.returns('mail.message', lambda value: value.id)
-    def message_post(self, *,
-                     body='', subject=None, message_type='notification',
-                     email_from=None, author_id=None, parent_id=False,
-                     subtype_id=False, subtype=None, partner_ids=None, channel_ids=None,
-                     attachments=None, attachment_ids=None,
-                     add_sign=True, record_name=False,
-                     **kwargs):
-        cliente_principal = False
-        nuevos_partners = []
-
-        if (self.partner_id.email_facturacion == True):
-            nuevos_partners.append(self.partner_id.id)
-        contactos_cliente = self.partner_id.child_ids
-        if contactos_cliente:
-            for contacto in contactos_cliente:
-                if contacto.email_facturacion == True:
-                    nuevos_partners.append(contacto.id)
-
-        partners_ids = nuevos_partners
-
-        res = super(MailThread, self).message_post(
-            body='', subject=None, message_type='notification',
-            email_from=None, author_id=None, parent_id=False,
-            subtype_id=False, subtype=None, partner_ids=None, channel_ids=None,
-            attachments=None, attachment_ids=None,
-            add_sign=True, record_name=False,
-            **kwargs)
-        return res
 
     def _notify_thread(self, message, msg_vals=False, **kwargs):
         nuevos_argumentos = {'partners': [], 'chanels': []}
