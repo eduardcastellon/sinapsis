@@ -65,8 +65,6 @@ class MailThread(models.AbstractModel):
                         nuevos_partners.append(contacto.id)
 
         partners_ids = nuevos_partners
-        if partner_ids:
-            raise UserError(_("No recipient found."))
 
         res = super(MailThread, self).message_post(body='', subject=None, message_type='notification',
                                                    email_from=None, author_id=None, parent_id=False,
