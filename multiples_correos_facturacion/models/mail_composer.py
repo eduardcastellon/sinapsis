@@ -64,14 +64,14 @@ class MailThread(models.AbstractModel):
 
 # class AccountInvoiceSend(models.TransientModel):
 #     _inherit = ['account.invoice.send']
-# 
+#
 #     # def send_and_print_action(self):
 #     # raise UserError(_(self.partner_ids))
 #     @api.model
 #     def default_get(self, fields):
-# 
+#
 #         res = super(AccountInvoiceSend, self).default_get(fields)
-# 
+#
 #         invoice_ids = res['invoice_ids']
 #         if invoice_ids:
 #             invoices = self.env['account.move'].browse(invoice_ids)
@@ -87,7 +87,7 @@ class MailThread(models.AbstractModel):
 #                                 seguidores_finales.append(seguidor.id)
 #                 self.env['account.move'].search([('id', '=', invoice.id)]).write(
 #                     {'message_follower_ids': seguidores_finales})
-# 
+#
 #         return res
 
 
@@ -101,13 +101,13 @@ class MailComposer(models.TransientModel):
         invoices = self.env[self.model].browse(self.res_id)
         if invoices:
             for invoice in invoices:
-                if (invoice.partner_id.email_facturacion == True):
+                if (invoice.partner_id.type == 'invoice'):
                     destinatarios.append(invoice.partner_id.id)
 
                 contactos_cliente = invoice.partner_id.child_ids
                 if contactos_cliente:
                     for contacto in contactos_cliente:
-                        if contacto.email_facturacion == True:
+                        if contacto.type == 'invoice':
                             destinatarios.append(contacto.id)
 
         self.partner_ids = destinatarios
@@ -125,16 +125,16 @@ class MailComposer(models.TransientModel):
             invoices = self.env[self.model].browse(res_ids)
             if invoices:
                 for invoice in invoices:
-                    if (invoice.partner_id.email_facturacion == True):
+                    if (invoice.partner_id.type == 'invoice'):
                         destinatarios.append(invoice.partner_id.id)
 
                     contactos_cliente = invoice.partner_id.child_ids
                     if contactos_cliente:
                         for contacto in contactos_cliente:
-                            if contacto.email_facturacion == True:
+                            if contacto.type == 'invoice':
                                 destinatarios.append(contacto.id)
 
-            self.partner_ids = [164]
+            self.partner_ids = destinatarios
 
         #             self.notified_partner_ids = destinatarios
         res = super(MailComposer, self).get_mail_values(res_ids)
@@ -147,13 +147,13 @@ class MailComposer(models.TransientModel):
             invoices = self.env[self.model].browse(res_ids)
             if invoices:
                 for invoice in invoices:
-                    if (invoice.partner_id.email_facturacion == True):
+                    if (invoice.partner_id.type == 'invoice'):
                         destinatarios.append(invoice.partner_id.id)
 
                     contactos_cliente = invoice.partner_id.child_ids
                     if contactos_cliente:
                         for contacto in contactos_cliente:
-                            if contacto.email_facturacion == True:
+                            if contacto.type == 'invoice':
                                 destinatarios.append(contacto.id)
 
             return destinatarios
