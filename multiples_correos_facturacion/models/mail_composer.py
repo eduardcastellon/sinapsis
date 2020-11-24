@@ -62,33 +62,33 @@ class MailThread(models.AbstractModel):
         return res
 
 
-class AccountInvoiceSend(models.TransientModel):
-    _inherit = ['account.invoice.send']
-
-    # def send_and_print_action(self):
-    # raise UserError(_(self.partner_ids))
-    @api.model
-    def default_get(self, fields):
-
-        res = super(AccountInvoiceSend, self).default_get(fields)
-
-        invoice_ids = res['invoice_ids']
-        if invoice_ids:
-            invoices = self.env['account.move'].browse(invoice_ids)
-            for invoice in invoices:
-                seguidores_finales = []
-                id_cliente = invoice.partner_id.id
-                is_company = invoice.partner_id.is_company
-                if is_company == True:
-                    seguidores = invoice.message_follower_ids
-                    if seguidores:
-                        for seguidor in seguidores:
-                            if seguidor.partner_id.id != id_cliente:
-                                seguidores_finales.append(seguidor.id)
-                self.env['account.move'].search([('id', '=', invoice.id)]).write(
-                    {'message_follower_ids': seguidores_finales})
-
-        return res
+# class AccountInvoiceSend(models.TransientModel):
+#     _inherit = ['account.invoice.send']
+# 
+#     # def send_and_print_action(self):
+#     # raise UserError(_(self.partner_ids))
+#     @api.model
+#     def default_get(self, fields):
+# 
+#         res = super(AccountInvoiceSend, self).default_get(fields)
+# 
+#         invoice_ids = res['invoice_ids']
+#         if invoice_ids:
+#             invoices = self.env['account.move'].browse(invoice_ids)
+#             for invoice in invoices:
+#                 seguidores_finales = []
+#                 id_cliente = invoice.partner_id.id
+#                 is_company = invoice.partner_id.is_company
+#                 if is_company == True:
+#                     seguidores = invoice.message_follower_ids
+#                     if seguidores:
+#                         for seguidor in seguidores:
+#                             if seguidor.partner_id.id != id_cliente:
+#                                 seguidores_finales.append(seguidor.id)
+#                 self.env['account.move'].search([('id', '=', invoice.id)]).write(
+#                     {'message_follower_ids': seguidores_finales})
+# 
+#         return res
 
 
 class MailComposer(models.TransientModel):
