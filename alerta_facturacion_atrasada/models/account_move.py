@@ -7,33 +7,38 @@ from odoo.exceptions import RedirectWarning, UserError, ValidationError, AccessE
 
 class AccountMove(models.Model):
     _inherit = ['account.move']
+    has_been_billed = fields.Boolean(default=False)
+
 
     def action_post(self):
         fecha_ultima_factura = False
         fecha_factura_actual = self.invoice_date
         ultima_factura_publicada = ""
+                        
+        if self.type == "out_invoice":
+            facturas = self.env["account.move"].search(
+                [("state", "=", 'posted')], limit=1
+            )
+            if facturas:
+                for factura in facturas:
+                    fecha_ultima_factura = factura.invoice_date
+                    ultima_factura_publicada = factura.name
 
-        facturas = self.env["account.move"].search(
-            [("state", "=", 'posted')], limit=1
-        )
-        if facturas:
-            for factura in facturas:
-                fecha_ultima_factura = factura.invoice_date
-                ultima_factura_publicada = factura.name
-
-        if fecha_ultima_factura != False:
-            if fecha_factura_actual:
-                if fecha_ultima_factura > fecha_factura_actual:
-                    view = self.env.ref('alerta_facturacion_atrasada.alert_wizard_form')
-                    return {'name': _('Aviso importante Interno'),
-                            'view_type': 'form',
-                            'view_mode': 'form',
-                            'target': 'new',
-                            'res_model': 'alert.wizard',
-                            'view_id': view.id,
-                            'views': [(view.id, 'form')],
-                            'type': 'ir.actions.act_window',
-                            'context': {'invoice': ultima_factura_publicada}
-                            }
+            if fecha_ultima_factura != False:
+                if fecha_factura_actual:
+                    if fecha_ultima_factura > fecha_factura_actual:
+                        if self.has_been_billed != True:
+                            view = self.env.ref('alerta_facturacion_atrasada.alert_wizard_form')
+                            return {'name': _('Aviso importante Interno'),
+                                    'view_type': 'form',
+                                    'view_mode': 'form',
+                                    'target': 'new',
+                                    'res_model': 'alert.wizard',
+                                    'view_id': view.id,
+                                    'views': [(view.id, 'form')],
+                                    'type': 'ir.actions.act_window',
+                                    'context': {'invoice': ultima_factura_publicada}
+                                    }
+        self.has_been_billed = True
         result = super(AccountMove, self).action_post()
         return result
