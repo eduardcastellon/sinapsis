@@ -97,22 +97,34 @@ class MailComposer(models.TransientModel):
     def send_mail(self, auto_commit=False):
         destinatarios = []
         self.partner_ids = []
-            
-        invoices = self.env[self.model].browse(self.res_id)
-        if invoices:
-            for invoice in invoices:
-                if (invoice.partner_id.type == 'invoice'):
-                    destinatarios.append(invoice.partner_id.id)
 
-                contactos_cliente = invoice.partner_id.child_ids
-                if contactos_cliente:
-                    for contacto in contactos_cliente:
-                        if contacto.type == 'invoice':
-                            destinatarios.append(contacto.id)
-        self.partner_ids = destinatarios
-        res = super(MailComposer, self).send_mail()
-        return res
-        # self.partner_ids = _obtener_destinatarios()
+        if self.model == "account.move":
+            invoices = self.env[self.model].browse(self.res_id)
+            if invoices:
+                for invoice in invoices:
+                    id_factura = invoice.id
+                    if id_factura:
+                        seguidores = self.env["mail.followers"].search(
+                            [("res_id", "=", id_factura), ('res_model', '=', 'account.move')])
+                        if seguidores:
+                            for seguidor in seguidores:
+                                if seguidor.partner_id.id == invoice.partner_id.id:
+                                    seguidor.unlink()
+
+                    if invoice.partner_id.type == 'invoice':
+                        destinatarios.append(invoice.partner_id.id)
+
+                    contactos_cliente = invoice.partner_id.child_ids
+                    if contactos_cliente:
+                        for contacto in contactos_cliente:
+                            if contacto.type == 'invoice':
+                                destinatarios.append(contacto.id)
+
+            self.partner_ids = destinatarios
+            res = super(MailComposer, self).send_mail()
+            return res
+            # self.partner_ids = _obtener_destinatarios()
+            # raise UserError(_(self.partner_ids))
 
     def get_mail_values(self, res_ids):
         destinatarios = []
