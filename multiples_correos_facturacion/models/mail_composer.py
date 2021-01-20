@@ -110,11 +110,11 @@ class MailComposer(models.TransientModel):
                         if contacto.type == 'invoice':
                             destinatarios.append(contacto.id)
         self.partner_ids = destinatarios
-            
+        raise UserError(_(self.partner_ids))
         res = super(MailComposer, self).send_mail()
         return res
         # self.partner_ids = _obtener_destinatarios()
-        # raise UserError(_(self.partner_ids))
+        raise UserError(_(self.partner_ids))
 
     def get_mail_values(self, res_ids):
         destinatarios = []
