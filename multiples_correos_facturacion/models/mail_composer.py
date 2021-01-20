@@ -109,7 +109,6 @@ class MailComposer(models.TransientModel):
                     for contacto in contactos_cliente:
                         if contacto.type == 'invoice':
                             destinatarios.append(contacto.id)
-        raise ValidationError(_(self.partner_ids))
         self.partner_ids = destinatarios
             
         res = super(MailComposer, self).send_mail()
