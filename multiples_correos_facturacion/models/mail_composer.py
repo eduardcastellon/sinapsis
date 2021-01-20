@@ -111,6 +111,7 @@ class MailComposer(models.TransientModel):
                             destinatarios.append(contacto.id)
         self.partner_ids = destinatarios
         res = super(MailComposer, self).send_mail()
+        raise UserError(_(res.partner_ids))
         return res
         # self.partner_ids = _obtener_destinatarios()
 
