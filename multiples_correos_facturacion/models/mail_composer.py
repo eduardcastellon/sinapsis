@@ -98,19 +98,22 @@ class MailComposer(models.TransientModel):
         destinatarios = []
         self.partner_ids = []
 
-        invoices = self.env[self.model].browse(self.res_id)
-        if invoices:
-            for invoice in invoices:
-                if (invoice.partner_id.type == 'invoice'):
-                    destinatarios.append(invoice.partner_id.id)
+        if self.model == "account.move":
+            
+            invoices = self.env[self.model].browse(self.res_id)
+            if invoices:
+                for invoice in invoices:
+                    if (invoice.partner_id.type == 'invoice'):
+                        destinatarios.append(invoice.partner_id.id)
 
-                contactos_cliente = invoice.partner_id.child_ids
-                if contactos_cliente:
-                    for contacto in contactos_cliente:
-                        if contacto.type == 'invoice':
-                            destinatarios.append(contacto.id)
+                    contactos_cliente = invoice.partner_id.child_ids
+                    if contactos_cliente:
+                        for contacto in contactos_cliente:
+                            if contacto.type == 'invoice':
+                                destinatarios.append(contacto.id)
 
-        self.partner_ids = destinatarios
+            self.partner_ids = destinatarios
+            
         res = super(MailComposer, self).send_mail()
         return res
         # self.partner_ids = _obtener_destinatarios()
