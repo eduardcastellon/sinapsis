@@ -23,7 +23,17 @@
 	url = git@github.com:OCA/bank-payment.git
 	branch = 13.0
 
+[submodule "OCA/server-ux"]
+	path = OCA/server-ux
+	url = git@github.com:OCA/server-ux.git
+	branch = 13.0
+
 [submodule "OCA/account-financial-reporting"]
 	path = OCA/account-financial-reporting
 	url = git@github.com:OCA/account-financial-reporting.git
+	branch = 13.0
+
+[submodule "OCA_Sinapsis"]
+	path = OCA_Sinapsis
+	url = git@github.com:OCA/l10n-spain.git
 	branch = 13.0
