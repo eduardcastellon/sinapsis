@@ -9,37 +9,36 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-01 02:44+0000\n"
-"PO-Revision-Date: 2020-07-03 21:19+0000\n"
-"Last-Translator: Jan Prokop <jprokop@jackie.sk>\n"
+"PO-Revision-Date: 2017-08-01 02:44+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Slovak (https://www.transifex.com/oca/teams/23907/sk/)\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10\n"
 
 #. module: date_range
-#: code:addons/date_range/models/date_range.py:59
+#: code:addons/date_range/models/date_range.py:0
 #, python-format
 msgid "%s is not a valid range (%s > %s)"
-msgstr "%s nie je platný rozsah (%s > %s)"
+msgstr ""
 
 #. module: date_range
-#: code:addons/date_range/models/date_range.py:87
+#: code:addons/date_range/models/date_range.py:0
 #, python-format
 msgid "%s overlaps %s"
-msgstr "%s prekrytie %s"
+msgstr ""
 
 #. module: date_range
-#: sql_constraint:date.range:0
+#: model:ir.model.constraint,message:date_range.constraint_date_range_date_range_uniq
 msgid "A date range must be unique per company !"
-msgstr "Rozsah dátumov musí byť pre spoločnosť jedinečný!"
+msgstr ""
 
 #. module: date_range
-#: sql_constraint:date.range.type:0
+#: model:ir.model.constraint,message:date_range.constraint_date_range_type_date_range_type_uniq
 msgid "A date range type must be unique per company !"
-msgstr "Typ rozsahu dátumov musí byť pre spoločnosť jedinečný !"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__active
@@ -50,7 +49,7 @@ msgstr "Aktívne"
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range_type__allow_overlap
 msgid "Allow Overlap"
-msgstr "Povoliť prekrytie"
+msgstr ""
 
 #. module: date_range
 #: model_terms:ir.ui.view,arch_db:date_range.date_range_generator_view_form
@@ -62,7 +61,7 @@ msgstr "Zrušiť"
 #: model:ir.model.fields,field_description:date_range.field_date_range_generator__company_id
 #: model:ir.model.fields,field_description:date_range.field_date_range_type__company_id
 msgid "Company"
-msgstr "Spoločnosť"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__create_uid
@@ -80,52 +79,51 @@ msgstr "Vytvorené"
 
 #. module: date_range
 #: model:ir.model,name:date_range.model_date_range
-#: model_terms:ir.ui.view,arch_db:date_range.view_date_range_form_view
 msgid "Date Range"
-msgstr "Rozsah dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model,name:date_range.model_date_range_generator
 msgid "Date Range Generator"
-msgstr "Generátor rozsahov dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model,name:date_range.model_date_range_type
 #: model_terms:ir.ui.view,arch_db:date_range.view_date_range_type_form_view
 msgid "Date Range Type"
-msgstr "Typ rozsahu dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.actions.act_window,name:date_range.date_range_type_action
 #: model:ir.ui.menu,name:date_range.menu_date_range_type_action
 msgid "Date Range Types"
-msgstr "Typy rozsahu dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.actions.act_window,name:date_range.date_range_action
 #: model:ir.ui.menu,name:date_range.menu_date_range_action
 msgid "Date Ranges"
-msgstr "Rozsahy dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range_generator__date_start
 msgid "Date Start"
-msgstr "Dátum začatia"
+msgstr ""
 
 #. module: date_range
 #: model_terms:ir.ui.view,arch_db:date_range.view_date_range_tree
 msgid "Date range"
-msgstr "Rozsah dátumov"
+msgstr ""
 
 #. module: date_range
 #: model_terms:ir.ui.view,arch_db:date_range.view_date_range_type_tree
 msgid "Date range type"
-msgstr "Typ rozsahu dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.ui.menu,name:date_range.menu_date_range
 msgid "Date ranges"
-msgstr "Rozsahy dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__display_name
@@ -137,19 +135,19 @@ msgstr "Zobraziť meno"
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range_generator__duration_count
 msgid "Duration"
-msgstr "Trvanie"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__date_end
 msgid "End date"
-msgstr "Dátum ukončenia"
+msgstr ""
 
 #. module: date_range
 #: model:ir.actions.act_window,name:date_range.date_range_generator_action
 #: model:ir.ui.menu,name:date_range.menu_date_range_generator_action
 #: model_terms:ir.ui.view,arch_db:date_range.date_range_generator_view_form
 msgid "Generate Date Ranges"
-msgstr "Generovať rozsahy dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__id
@@ -161,7 +159,7 @@ msgstr "ID"
 #. module: date_range
 #: model:ir.model.fields,help:date_range.field_date_range_type__allow_overlap
 msgid "If sets date range of same type must not overlap."
-msgstr "Pri nastavení rozsahu dátumov rovnakého typu sa nesmú prekrývať."
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range____last_update
@@ -193,54 +191,52 @@ msgstr "Meno"
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range_generator__count
 msgid "Number of ranges to generate"
-msgstr "Počet generovaných rozsahov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range_generator__name_prefix
 msgid "Range name prefix"
-msgstr "Prefix rozsahu dátumov"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range_type__date_range_ids
 msgid "Ranges"
-msgstr "Rozsahy"
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__date_start
 msgid "Start date"
-msgstr "Dátum počiatku"
+msgstr ""
 
 #. module: date_range
 #: model_terms:ir.ui.view,arch_db:date_range.date_range_generator_view_form
 msgid "Submit"
-msgstr "Zaslať"
+msgstr ""
 
 #. module: date_range
-#: code:addons/date_range/wizard/date_range_generator.py:74
+#: code:addons/date_range/wizard/date_range_generator.py:0
 #, python-format
 msgid ""
 "The Company in the Date Range Generator and in Date Range Type must be the "
 "same."
 msgstr ""
-"Spoločnosť v generátore rozsahu dátumov a v type rozsahu dátumov musí byť tá "
-"istá."
 
 #. module: date_range
-#: code:addons/date_range/models/date_range.py:51
+#: code:addons/date_range/models/date_range.py:0
 #, python-format
 msgid "The Company in the Date Range and in Date Range Type must be the same."
-msgstr "Spoločnosť v rozsahu dátumov a v type rozsahu dátumov musí byť tá istá."
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,help:date_range.field_date_range_type__active
 msgid ""
 "The active field allows you to hide the date range type without removing it."
-msgstr "Pole \"aktívne\" umožňuje skryť typ rozsahu dátumov bez zmazania."
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,help:date_range.field_date_range__active
 msgid "The active field allows you to hide the date range without removing it."
-msgstr "Pole \"aktívne\" umožňuje skryť rozsah dátumov bez zmazania."
+msgstr ""
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__type_id
@@ -250,40 +246,39 @@ msgstr "Typ"
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range__type_name
+#, fuzzy
 msgid "Type Name"
-msgstr "Názov typu"
+msgstr "Meno"
 
 #. module: date_range
 #: model:ir.model.fields,field_description:date_range.field_date_range_generator__unit_of_time
 msgid "Unit Of Time"
-msgstr "Časová jednotka"
+msgstr ""
 
 #. module: date_range
-#: code:addons/date_range/models/date_range_type.py:42
+#: code:addons/date_range/models/date_range_type.py:0
 #, python-format
 msgid ""
 "You cannot change the company, as this Date Range Type is  assigned to Date "
 "Range (%s)."
 msgstr ""
-"Nemožno zmeniť spoločnosť, tento typ rozsahu dátumov je priradený k rozsahu "
-"dátumov (%s)."
 
 #. module: date_range
-#: selection:date.range.generator,unit_of_time:0
+#: model:ir.model.fields.selection,name:date_range.selection__date_range_generator__unit_of_time__3
 msgid "days"
-msgstr "dní"
+msgstr ""
 
 #. module: date_range
-#: selection:date.range.generator,unit_of_time:0
+#: model:ir.model.fields.selection,name:date_range.selection__date_range_generator__unit_of_time__1
 msgid "months"
-msgstr "mesiacov"
+msgstr ""
 
 #. module: date_range
-#: selection:date.range.generator,unit_of_time:0
+#: model:ir.model.fields.selection,name:date_range.selection__date_range_generator__unit_of_time__2
 msgid "weeks"
-msgstr "týždňov"
+msgstr ""
 
 #. module: date_range
-#: selection:date.range.generator,unit_of_time:0
+#: model:ir.model.fields.selection,name:date_range.selection__date_range_generator__unit_of_time__0
 msgid "years"
-msgstr "rokov"
+msgstr ""
