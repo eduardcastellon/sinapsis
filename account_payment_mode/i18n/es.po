@@ -20,15 +20,9 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 
 #. module: account_payment_mode
-#: sql_constraint:account.payment.method:0
+#: model:ir.model.constraint,message:account_payment_mode.constraint_account_payment_method_code_payment_type_unique
 msgid "A payment method of the same type already exists with this code"
 msgstr "Un método de pago del mismo tipo ya existe con este código"
-
-#. module: account_payment_mode
-#: model:ir.model.fields,field_description:account_payment_mode.field_account_bank_statement_import_journal_creation__company_partner_id
-#: model:ir.model.fields,field_description:account_payment_mode.field_account_journal__company_partner_id
-msgid "Account Holder"
-msgstr ""
 
 #. module: account_payment_mode
 #: model:ir.model.fields,help:account_payment_mode.field_account_payment_method__bank_account_required
@@ -62,6 +56,7 @@ msgstr "Tipo de cuenta bancaria"
 
 #. module: account_payment_mode
 #: model:ir.model.fields,field_description:account_payment_mode.field_account_payment_method__code
+#: model:ir.model.fields,field_description:account_payment_mode.field_account_payment_mode__payment_method_code
 msgid "Code (Do Not Modify)"
 msgstr ""
 
@@ -106,7 +101,7 @@ msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: account_payment_mode
-#: selection:account.payment.mode,bank_account_link:0
+#: model:ir.model.fields.selection,name:account_payment_mode.selection__account_payment_mode__bank_account_link__fixed
 msgid "Fixed"
 msgstr "Fijo"
 
@@ -175,11 +170,6 @@ msgid "Inbound Credit Trf Société Générale"
 msgstr "Transf. entrante Société Générale"
 
 #. module: account_payment_mode
-#: model:ir.model,name:account_payment_mode.model_account_invoice
-msgid "Invoice"
-msgstr ""
-
-#. module: account_payment_mode
 #: model:ir.model,name:account_payment_mode.model_account_journal
 msgid "Journal"
 msgstr "Diario"
@@ -245,7 +235,7 @@ msgid "Note"
 msgstr "Nota"
 
 #. module: account_payment_mode
-#: code:addons/account_payment_mode/models/account_payment_mode.py:70
+#: code:addons/account_payment_mode/models/account_payment_mode.py:0
 #, python-format
 msgid ""
 "On the payment mode '%s', the bank account link is 'Fixed' but the fixed "
@@ -255,7 +245,7 @@ msgstr ""
 "cuenta bancaria fija no está establecida"
 
 #. module: account_payment_mode
-#: code:addons/account_payment_mode/models/account_payment_mode.py:93
+#: code:addons/account_payment_mode/models/account_payment_mode.py:0
 #, python-format
 msgid ""
 "On the payment mode '%s', the payment method is '%s' (it is in fact a debit "
@@ -267,7 +257,7 @@ msgstr ""
 "del diario bancario fijo '%s'"
 
 #. module: account_payment_mode
-#: code:addons/account_payment_mode/models/account_payment_mode.py:80
+#: code:addons/account_payment_mode/models/account_payment_mode.py:0
 #, python-format
 msgid ""
 "On the payment mode '%s', the payment method is '%s', but this payment "
@@ -290,15 +280,9 @@ msgid "Payment Method"
 msgstr "Método de pago"
 
 #. module: account_payment_mode
-#: model:ir.model.fields,field_description:account_payment_mode.field_account_payment_mode__payment_method_code
-msgid "Payment Method Code"
-msgstr "Código del método de pago"
-
-#. module: account_payment_mode
 #: model:ir.actions.act_window,name:account_payment_mode.account_payment_method_action
 #: model:ir.model,name:account_payment_mode.model_account_payment_method
 #: model:ir.ui.menu,name:account_payment_mode.account_payment_method_menu
-#: model_terms:ir.ui.view,arch_db:account_payment_mode.account_payment_method_tree
 msgid "Payment Methods"
 msgstr "Métodos de pago"
 
@@ -311,7 +295,6 @@ msgstr "Modo de pago"
 #: model:ir.actions.act_window,name:account_payment_mode.account_payment_mode_action
 #: model:ir.model,name:account_payment_mode.model_account_payment_mode
 #: model:ir.ui.menu,name:account_payment_mode.account_payment_mode_menu
-#: model_terms:ir.ui.view,arch_db:account_payment_mode.account_payment_mode_tree
 msgid "Payment Modes"
 msgstr "Modos de pago"
 
@@ -337,7 +320,7 @@ msgid "Search Payment Modes"
 msgstr "Buscar modos de pago"
 
 #. module: account_payment_mode
-#: code:addons/account_payment_mode/models/account_journal.py:36
+#: code:addons/account_payment_mode/models/account_journal.py:0
 #, python-format
 msgid ""
 "The company of the journal '%s' does not match with the company of the "
@@ -347,7 +330,7 @@ msgstr ""
 "'%s' que se usa con el diario fijo de banco."
 
 #. module: account_payment_mode
-#: code:addons/account_payment_mode/models/account_journal.py:45
+#: code:addons/account_payment_mode/models/account_journal.py:0
 #, python-format
 msgid ""
 "The company of the journal '%s' does not match with the company of the "
@@ -357,7 +340,7 @@ msgstr ""
 "'%s' que se usa con los diarios permitidos de banco."
 
 #. module: account_payment_mode
-#: code:addons/account_payment_mode/models/account_payment_mode.py:108
+#: code:addons/account_payment_mode/models/account_payment_mode.py:0
 #, python-format
 msgid ""
 "The company of the payment mode '%s', does not match with the company of "
@@ -367,7 +350,7 @@ msgstr ""
 "'%s'."
 
 #. module: account_payment_mode
-#: code:addons/account_payment_mode/models/account_payment_mode.py:118
+#: code:addons/account_payment_mode/models/account_payment_mode.py:0
 #, python-format
 msgid ""
 "The company of the payment mode '%s', does not match with the one of the "
@@ -389,9 +372,12 @@ msgstr ""
 "fallar."
 
 #. module: account_payment_mode
-#: selection:account.payment.mode,bank_account_link:0
+#: model:ir.model.fields.selection,name:account_payment_mode.selection__account_payment_mode__bank_account_link__variable
 msgid "Variable"
 msgstr "Variable"
+
+#~ msgid "Payment Method Code"
+#~ msgstr "Código del método de pago"
 
 #~ msgid "Bank Accounts"
 #~ msgstr "Cuentas bancarias"

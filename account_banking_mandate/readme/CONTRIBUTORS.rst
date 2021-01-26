@@ -5,3 +5,5 @@
 * Sergio Teruel <sergio.teruel@tecnativa.com>
 * Cédric Pigeon <cedric.pigeon@acsone.eu>
 * Carlos Dauden <carlos.dauden@tecnativa.com>
+* Marçal Isern <marsal.isern@qubiq.es>
+* Andrea Stirpe <a.stirpe@onestein.nl>

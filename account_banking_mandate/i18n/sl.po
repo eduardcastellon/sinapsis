@@ -9,16 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 14:56+0000\n"
-"PO-Revision-Date: 2020-03-21 14:13+0000\n"
-"Last-Translator: Matjaz Mozetic <matjaz@matmoz.si>\n"
+"PO-Revision-Date: 2018-03-09 14:56+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 3.10\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: account_banking_mandate
 #: model_terms:ir.actions.act_window,help:account_banking_mandate.mandate_action
@@ -26,13 +25,11 @@ msgid ""
 "A Banking Mandate is a document signed by your customer that gives you the "
 "autorization to do one or several operations on his bank account."
 msgstr ""
-"Bančni mandat je dokument podpisan s strani vaše stranke, ki vas pooblašča "
-"za izvajanje operacij na njihovem bančnem računu."
 
 #. module: account_banking_mandate
-#: sql_constraint:account.banking.mandate:0
+#: model:ir.model.constraint,message:account_banking_mandate.constraint_account_banking_mandate_mandate_ref_company_uniq
 msgid "A Mandate with the same reference already exists for this company!"
-msgstr "Mandat z istim sklicem že obstaja za to družbo!"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model,name:account_banking_mandate.model_account_banking_mandate
@@ -42,23 +39,21 @@ msgstr "Generični bančni mandat"
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_needaction
 msgid "Action Needed"
-msgstr "Potrebno ukrepanje"
+msgstr ""
 
 #. module: account_banking_mandate
-#: model:ir.model.fields,help:account_banking_mandate.field_account_invoice__mandate_required
+#: model:ir.model.fields,help:account_banking_mandate.field_account_move__mandate_required
 #: model:ir.model.fields,help:account_banking_mandate.field_account_payment_line__mandate_required
 #: model:ir.model.fields,help:account_banking_mandate.field_account_payment_method__mandate_required
 msgid ""
 "Activate this option if this payment method requires your customer to sign a "
 "direct debit mandate with your company."
 msgstr ""
-"Aktivirajte to opcijo, če ta plačilna metoda zahteva strankin podpis za "
-"direkten debetni mandat vaši družbi."
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_attachment_count
 msgid "Attachment Count"
-msgstr "Število prilog"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_form
@@ -99,11 +94,9 @@ msgid ""
 "Banking mandates represent an authorization that the bank account owner "
 "gives to a company for a specific operation."
 msgstr ""
-"Bančni mandat predstavlja pooblastilo, ki ga lastnik bančnega računa izda "
-"družbi za specifične operacije."
 
 #. module: account_banking_mandate
-#: selection:account.banking.mandate,format:0
+#: model:ir.model.fields.selection,name:account_banking_mandate.selection__account_banking_mandate__format__basic
 msgid "Basic Mandate"
 msgstr "Osnovni mandat"
 
@@ -114,13 +107,13 @@ msgid "Cancel"
 msgstr "Preklic"
 
 #. module: account_banking_mandate
-#: selection:account.banking.mandate,state:0
+#: model:ir.model.fields.selection,name:account_banking_mandate.selection__account_banking_mandate__state__cancel
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_search
 msgid "Cancelled"
 msgstr "Preklicano"
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:196
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid ""
 "Cannot validate the mandate '%s' because it is not attached to a bank "
@@ -128,7 +121,7 @@ msgid ""
 msgstr "Mandata '%s' ni mogoče overiti, ker ni pripet bančnemu računu."
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:192
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid "Cannot validate the mandate '%s' without a date of signature."
 msgstr "Mandata '%s' ni mogoče overiti brez datuma podpisa."
@@ -136,7 +129,7 @@ msgstr "Mandata '%s' ni mogoče overiti brez datuma podpisa."
 #. module: account_banking_mandate
 #: model_terms:ir.actions.act_window,help:account_banking_mandate.mandate_action
 msgid "Click to create a new Banking Mandate."
-msgstr "Ustvari nov bančni mandat."
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__company_id
@@ -146,7 +139,7 @@ msgstr "Družba"
 #. module: account_banking_mandate
 #: model:ir.model,name:account_banking_mandate.model_res_partner
 msgid "Contact"
-msgstr "Stik"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__create_uid
@@ -169,7 +162,7 @@ msgid "Date of the Last Debit"
 msgstr "Datum zadnje obremenitve"
 
 #. module: account_banking_mandate
-#: model:ir.model.fields,field_description:account_banking_mandate.field_account_invoice__mandate_id
+#: model:ir.model.fields,field_description:account_banking_mandate.field_account_move__mandate_id
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_move_line__mandate_id
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_payment_line__mandate_id
 #: model:ir.model.fields,field_description:account_banking_mandate.field_bank_payment_line__mandate_id
@@ -189,14 +182,14 @@ msgid "Display Name"
 msgstr "Prikazni naziv"
 
 #. module: account_banking_mandate
-#: selection:account.banking.mandate,state:0
+#: model:ir.model.fields.selection,name:account_banking_mandate.selection__account_banking_mandate__state__draft
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_search
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_tree
 msgid "Draft"
 msgstr "Osnutek"
 
 #. module: account_banking_mandate
-#: selection:account.banking.mandate,state:0
+#: model:ir.model.fields.selection,name:account_banking_mandate.selection__account_banking_mandate__state__expired
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_search
 msgid "Expired"
 msgstr "Pretečeni"
@@ -205,22 +198,22 @@ msgstr "Pretečeni"
 #: model:ir.model.fields,field_description:account_banking_mandate.field_res_partner__valid_mandate_id
 #: model:ir.model.fields,field_description:account_banking_mandate.field_res_users__valid_mandate_id
 msgid "First Valid Mandate"
-msgstr "Prvi veljaven mandat"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_follower_ids
 msgid "Followers"
-msgstr "Sledilci"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_channel_ids
 msgid "Followers (Channels)"
-msgstr "Sledilci (kanali)"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Sledilci (partnerji)"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_form
@@ -229,9 +222,9 @@ msgid "Format"
 msgstr "Format"
 
 #. module: account_banking_mandate
-#: selection:account.banking.mandate,type:0
+#: model:ir.model.fields.selection,name:account_banking_mandate.selection__account_banking_mandate__type__generic
 msgid "Generic Mandate"
-msgstr "Generičen mandat"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_search
@@ -244,34 +237,31 @@ msgid "ID"
 msgstr "ID"
 
 #. module: account_banking_mandate
-#: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_unread
-msgid "If checked new messages require your attention."
-msgstr "Če je označeno, zahtevajo nova sporočila vašo pozornost."
-
-#. module: account_banking_mandate
 #: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_needaction
+#: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_unread
 msgid "If checked, new messages require your attention."
-msgstr "Če je označeno, zahtevajo nova sporočila vašo pozornost."
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_has_error
+#: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Če je označeno, imajo nekatera sporočila napako pri dostavi."
-
-#. module: account_banking_mandate
-#: model:ir.model,name:account_banking_mandate.model_account_invoice
-msgid "Invoice"
-msgstr "Račun"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_is_follower
 msgid "Is Follower"
-msgstr "Je sledilec"
+msgstr ""
+
+#. module: account_banking_mandate
+#: model:ir.model,name:account_banking_mandate.model_account_move
+msgid "Journal Entries"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model,name:account_banking_mandate.model_account_move_line
 msgid "Journal Item"
-msgstr "Dnevniški zapis"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate____last_update
@@ -291,7 +281,7 @@ msgstr "Zadnjič posodobljeno"
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_main_attachment_id
 msgid "Main Attachment"
-msgstr "Glavna priloga"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.bank_payment_line_tree
@@ -304,91 +294,86 @@ msgid "Mandate Format"
 msgstr "Format mandata"
 
 #. module: account_banking_mandate
-#: model:ir.model.fields,field_description:account_banking_mandate.field_account_invoice__mandate_required
+#: model:ir.model.fields,field_description:account_banking_mandate.field_account_move__mandate_required
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_payment_line__mandate_required
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_payment_method__mandate_required
 msgid "Mandate Required"
-msgstr "Zahteva se mandat"
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:241
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid "Mandate should be in cancel state."
-msgstr "Mandat bi moral biti v stanju preklicano."
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:229
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid "Mandate should be in draft or valid state."
-msgstr "Mandat bi moral biti v stanjih osnutek ali veljavno."
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:220
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid "Mandate should be in draft state."
-msgstr "Mandat bi moral biti v stanju osnutek."
+msgstr ""
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.partner_view_buttons
 msgid "Mandate(s)"
-msgstr "Mandat(ov)"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.mandate_partner_bank_tree
 msgid "Mandates"
-msgstr "Mandati"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_has_error
 msgid "Message Delivery error"
-msgstr "Napaka pri dostavi sporočila"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_ids
 msgid "Messages"
-msgstr "Sporočila"
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_payment_line.py:51
+#: code:addons/account_banking_mandate/models/account_payment_line.py:0
 #, python-format
 msgid "Missing Mandate on payment line %s"
-msgstr "Pri plačilni postavki %s manjka mandat"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_needaction_counter
 msgid "Number of Actions"
-msgstr "Število ukrepov"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_res_partner__mandate_count
 #: model:ir.model.fields,field_description:account_banking_mandate.field_res_users__mandate_count
 msgid "Number of Mandates"
-msgstr "Število mandatov"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_has_error_counter
-msgid "Number of error"
-msgstr "Število napak"
+msgid "Number of errors"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr "Število sporočil, ki potrebujejo ukrepanje"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr "Število sporočil, ki niso bila pravilno dostavljena"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__message_unread_counter
 msgid "Number of unread messages"
-msgstr "Število neprebranih sporočil"
-
-#. module: account_banking_mandate
-#: selection:account.banking.mandate,type:0
-msgid "One-Off"
-msgstr "Enkratna"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__state
@@ -406,8 +391,9 @@ msgstr "Partner"
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__payment_line_ids_count
+#, fuzzy
 msgid "Payment Line Ids Count"
-msgstr "Število plačilnih postavk"
+msgstr "Plačilne postavke"
 
 #. module: account_banking_mandate
 #: model:ir.model,name:account_banking_mandate.model_account_payment_line
@@ -417,19 +403,14 @@ msgstr "Plačilne postavke"
 #. module: account_banking_mandate
 #: model:ir.model,name:account_banking_mandate.model_account_payment_method
 msgid "Payment Methods"
-msgstr "Metode plačila"
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:114
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.views_mandate_form_buttons
-#, python-format
+#, fuzzy, python-format
 msgid "Payment lines"
 msgstr "Plačilne postavke"
-
-#. module: account_banking_mandate
-#: selection:account.banking.mandate,type:0
-msgid "Recurrent"
-msgstr "Ponavljajoče se"
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_tree
@@ -447,6 +428,11 @@ msgid "Related Payment Lines"
 msgstr "Povezane plačilne postavke"
 
 #. module: account_banking_mandate
+#: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__scan
 msgid "Scan of the Mandate"
 msgstr "Sken mandata"
@@ -455,11 +441,6 @@ msgstr "Sken mandata"
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_search
 msgid "Search Banking Mandates"
 msgstr "Iskanje bančnih mandatov"
-
-#. module: account_banking_mandate
-#: selection:account.banking.mandate,format:0
-msgid "Sepa Mandate"
-msgstr "SEPA mandat"
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_search
@@ -478,34 +459,34 @@ msgid "Status"
 msgstr "Status"
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:145
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid "The company of the mandate %s differs from the company of partner %s."
-msgstr "Družba na mandatu %s je drugačna od družbe na partnerju %s."
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:129
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid "The date of signature of mandate '%s' is in the future!"
-msgstr "Datum podpisa mandata '%s' je v prihodnosti!"
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_invoice.py:93
+#: code:addons/account_banking_mandate/models/account_move.py:0
 #, python-format
 msgid ""
 "The invoice %s has a different company than that of the linked mandate %s)."
-msgstr "Račun %s vsebuje drugačno družbo kot je na povezanem mandatu %s)."
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_move_line.py:46
+#: code:addons/account_banking_mandate/models/account_move_line.py:0
 #, python-format
 msgid ""
 "The item %s of journal %s has a different company than that of the linked "
 "mandate %s)."
-msgstr "Postavka %s v dnevniku %s ima drugačno družbo kot povezani mandat %s)."
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:135
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid ""
 "The mandate '%s' can't have a date of last debit before the date of "
@@ -514,24 +495,20 @@ msgstr ""
 "Mandat '%s' ne sme imeti datuma zadnje obremenitve pred datumom podpisa."
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_payment_line.py:41
+#: code:addons/account_banking_mandate/models/account_payment_line.py:0
 #, python-format
 msgid ""
 "The payment line number %s a different company than that of the linked "
 "mandate %s)."
 msgstr ""
-"Številka plačilne postavke %s vsebuje drugačno družbo od tiste na povezanem "
-"mandatu %s)."
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_payment_line.py:26
+#: code:addons/account_banking_mandate/models/account_payment_line.py:0
 #, python-format
 msgid ""
 "The payment line number %s has the bank account '%s' which is not attached "
 "to the mandate '%s' (this mandate is attached to the bank account '%s')."
 msgstr ""
-"Številka plačilne postavke %s vsebuje bančni račun '%s' ki ni povezan z "
-"mandatom '%s' (ta mandat je povezan z bančnim računom '%s')."
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_form
@@ -541,7 +518,7 @@ msgstr "Tip"
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__type
 msgid "Type of Mandate"
-msgstr "Tip mandata"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__unique_mandate_reference
@@ -551,15 +528,15 @@ msgstr "Unikatni sklic mandata"
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_unread
 msgid "Unread Messages"
-msgstr "Neprebrana sporočila"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr "Število neprebranih sporočil"
+msgstr ""
 
 #. module: account_banking_mandate
-#: selection:account.banking.mandate,state:0
+#: model:ir.model.fields.selection,name:account_banking_mandate.selection__account_banking_mandate__state__valid
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_search
 msgid "Valid"
 msgstr "Veljaven"
@@ -573,62 +550,52 @@ msgstr "Potrdi"
 #. module: account_banking_mandate
 #: model:ir.model.fields,field_description:account_banking_mandate.field_account_banking_mandate__website_message_ids
 msgid "Website Messages"
-msgstr "Spletna sporočila"
+msgstr ""
 
 #. module: account_banking_mandate
 #: model:ir.model.fields,help:account_banking_mandate.field_account_banking_mandate__website_message_ids
 msgid "Website communication history"
-msgstr "Zgodovina spletnih komunikacij"
+msgstr ""
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/res_partner_bank.py:25
+#: code:addons/account_banking_mandate/models/res_partner_bank.py:0
 #, python-format
 msgid ""
 "You cannot change the company of Partner Bank %s, as there exists mandates "
 "referencing it that belong to another company."
 msgstr ""
-"Ne morete spremeniti družbe partnerja banke %s, ker obstajajo mandati, ki se "
-"sklicujejo nanj in pripadajo drugi družbi."
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:180
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid ""
 "You cannot change the company of mandate %s, as there exists bank payment "
 "lines referencing it that belong to another company."
 msgstr ""
-"Ne morete spremeniti družbe na mandatu %s, ker obstajajo bančne plačilne "
-"postavke, ki se sklicujejo nanj in pripadajo drugi družbi."
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:162
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid ""
 "You cannot change the company of mandate %s, as there exists invoices "
 "referencing it that belong to another company."
 msgstr ""
-"Ne morete spremeniti družbe na mandatu %s, ker obstajajo računi, ki se "
-"sklicujejo nanj in pripadajo drugi družbi."
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:171
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid ""
 "You cannot change the company of mandate %s, as there exists journal items "
 "referencing it that belong to another company."
 msgstr ""
-"Ne morete spremeniti družbe na mandatu %s, ker obstajajo dnevniške postavke, "
-"ki se sklicujejo nanj in pripadajo drugi družbi."
 
 #. module: account_banking_mandate
-#: code:addons/account_banking_mandate/models/account_banking_mandate.py:153
+#: code:addons/account_banking_mandate/models/account_banking_mandate.py:0
 #, python-format
 msgid ""
 "You cannot change the company of mandate %s, as there exists payment lines "
 "referencing it that belong to another company."
 msgstr ""
-"Ne morete spremeniti družbe na mandatu %s, ker obstajajo plačilne postavke, "
-"ki se sklicujejo nanj in pripadajo drugi družbi."
 
 #. module: account_banking_mandate
 #: model_terms:ir.ui.view,arch_db:account_banking_mandate.view_mandate_form
@@ -638,3 +605,15 @@ msgid ""
 msgstr ""
 "Mandat ponastavite v osnutek le, če ste ga pomotoma preklicali. Želite "
 "nadaljevati?"
+
+#~ msgid "Invoice"
+#~ msgstr "Račun"
+
+#~ msgid "One-Off"
+#~ msgstr "Enkratna"
+
+#~ msgid "Recurrent"
+#~ msgstr "Ponavljajoče se"
+
+#~ msgid "Sepa Mandate"
+#~ msgstr "SEPA mandat"
