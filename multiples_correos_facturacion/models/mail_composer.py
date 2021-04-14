@@ -98,7 +98,7 @@ class MailComposer(models.TransientModel):
         destinatarios = []
         self.partner_ids = []
 
-        if self.model == "account.move":
+        if self.model == "account.move" and not self.is_log:
             invoices = self.env[self.model].browse(self.res_id)
             if invoices:
                 for invoice in invoices:
@@ -125,6 +125,8 @@ class MailComposer(models.TransientModel):
             return res
             # self.partner_ids = _obtener_destinatarios()
             # raise UserError(_(self.partner_ids))
+        else:
+            return super(MailComposer, self).send_mail()
 
     def get_mail_values(self, res_ids):
         destinatarios = []
