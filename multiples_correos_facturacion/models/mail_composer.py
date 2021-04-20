@@ -21,14 +21,20 @@ class Notification(models.Model):
                 message = self.env['mail.message'].search([('id', '=', message_id)])
                 if message:
                     if message.model == 'account.move':
-                        invoice = self.env['account.move'].search([('id', '=', message.res_id)])
-                        id_cliente = invoice.partner_id.id
-                        is_company = invoice.partner_id.is_company
 
-                        # raise UserError(_(is_company))
+                        internal = False
+                        if message.subtype_id and message.subtype_id.internal:
+                            internal = True
 
-                        if notification['res_partner_id'] != id_cliente:
-                            nuevos_valores_para_notificar.append(notification)
+                        if not internal:
+                            invoice = self.env['account.move'].search([('id', '=', message.res_id)])
+                            id_cliente = invoice.partner_id.id
+                            is_company = invoice.partner_id.is_company
+
+                            # raise UserError(_(is_company))
+
+                            if notification['res_partner_id'] != id_cliente:
+                                nuevos_valores_para_notificar.append(notification)
         res = super(Notification, self).create(nuevos_valores_para_notificar)
         return res
 
