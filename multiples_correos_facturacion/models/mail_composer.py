@@ -109,28 +109,34 @@ class MailComposer(models.TransientModel):
         self.partner_ids = []
 
         if self.model == "account.move" and not self.is_log:
-            invoices = self.env[self.model].browse(self.res_id)
-            if invoices:
-                for invoice in invoices:
-                    id_factura = invoice.id
-                    if id_factura:
-                        seguidores = self.env["mail.followers"].search(
-                            [("res_id", "=", id_factura), ('res_model', '=', 'account.move')])
-                        if seguidores:
-                            for seguidor in seguidores:
-                                if seguidor.partner_id.id == invoice.partner_id.id:
-                                    seguidor.unlink()
 
-                    if invoice.partner_id.type == 'invoice':
-                        destinatarios.append(invoice.partner_id.id)
+            internal = False
+            if self.subtype_id and self.subtype_id.internal:
+                internal = True
 
-                    contactos_cliente = invoice.partner_id.child_ids
-                    if contactos_cliente:
-                        for contacto in contactos_cliente:
-                            if contacto.type == 'invoice':
-                                destinatarios.append(contacto.id)
+            if not internal:
+                invoices = self.env[self.model].browse(self.res_id)
+                if invoices:
+                    for invoice in invoices:
+                        id_factura = invoice.id
+                        if id_factura:
+                            seguidores = self.env["mail.followers"].search(
+                                [("res_id", "=", id_factura), ('res_model', '=', 'account.move')])
+                            if seguidores:
+                                for seguidor in seguidores:
+                                    if seguidor.partner_id.id == invoice.partner_id.id:
+                                        seguidor.unlink()
 
-            self.partner_ids = destinatarios
+                        if invoice.partner_id.type == 'invoice':
+                            destinatarios.append(invoice.partner_id.id)
+
+                        contactos_cliente = invoice.partner_id.child_ids
+                        if contactos_cliente:
+                            for contacto in contactos_cliente:
+                                if contacto.type == 'invoice':
+                                    destinatarios.append(contacto.id)
+
+                self.partner_ids = destinatarios
             res = super(MailComposer, self).send_mail()
             return res
             # self.partner_ids = _obtener_destinatarios()
@@ -144,19 +150,25 @@ class MailComposer(models.TransientModel):
 
         if (modelo_vigente == 'account.move'):
             # Recuperamos los contactos que son para facturacion
-            invoices = self.env[self.model].browse(res_ids)
-            if invoices:
-                for invoice in invoices:
-                    if (invoice.partner_id.type == 'invoice'):
-                        destinatarios.append(invoice.partner_id.id)
 
-                    contactos_cliente = invoice.partner_id.child_ids
-                    if contactos_cliente:
-                        for contacto in contactos_cliente:
-                            if contacto.type == 'invoice':
-                                destinatarios.append(contacto.id)
+            internal = False
+            if self.subtype_id and self.subtype_id.internal:
+                internal = True
 
-            self.partner_ids = destinatarios
+            if not internal:
+                invoices = self.env[self.model].browse(res_ids)
+                if invoices:
+                    for invoice in invoices:
+                        if (invoice.partner_id.type == 'invoice'):
+                            destinatarios.append(invoice.partner_id.id)
+
+                        contactos_cliente = invoice.partner_id.child_ids
+                        if contactos_cliente:
+                            for contacto in contactos_cliente:
+                                if contacto.type == 'invoice':
+                                    destinatarios.append(contacto.id)
+
+                self.partner_ids = destinatarios
 
         #             self.notified_partner_ids = destinatarios
         res = super(MailComposer, self).get_mail_values(res_ids)
