@@ -52,13 +52,17 @@ class MailThread(models.AbstractModel):
         res = super(MailThread, self)._notify_thread(message, msg_vals=False, **kwargs)
 
         if (message.model == 'account.move'):
-            invoice = self.env['account.move'].search([('id', '=', message.res_id)])
-            id_cliente = invoice.partner_id.id
-            is_company = invoice.partner_id.is_company
-            for receptor in res['partners']:
-                if receptor['id'] != id_cliente:
-                    nuevos_argumentos['partners'].append(receptor)
-        res['partners'] = nuevos_argumentos
+            internal = False
+            if message.subtype_id and message.subtype_id.internal:
+                internal = True
+            if not internal:
+                invoice = self.env['account.move'].search([('id', '=', message.res_id)])
+                id_cliente = invoice.partner_id.id
+                is_company = invoice.partner_id.is_company
+                for receptor in res['partners']:
+                    if receptor['id'] != id_cliente:
+                        nuevos_argumentos['partners'].append(receptor)
+                res['partners'] = nuevos_argumentos
         return res
 
 
