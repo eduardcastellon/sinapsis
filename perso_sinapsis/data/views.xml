@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Project -->
+        <record id="hr_timesheet.portal_my_task" model="ir.ui.view">
+            <field name="name">Portal: My Task with Timesheets</field>
+            <field name="active" eval="False" />
+        </record>
+
+        <record id="hr_timesheet.portal_timesheet_table" model="ir.ui.view">
+            <field name="name">Portal Timesheet Table</field>
+            <field name="active" eval="False" />
+        </record>
+
+        <!-- Timesheet -->
+        <record id="hr_timesheet.portal_layout" model="ir.ui.view">
+            <field name="name">Portal layout: timesheet menu entry</field>
+            <field name="active" eval="False" />
+        </record>
+
+        <record id="hr_timesheet.portal_my_home_timesheet" model="ir.ui.view">
+            <field name="name">Portal My Home : timesheets entries</field>
+            <field name="active" eval="False" />
+        </record>
+
+        <record id="hr_timesheet.portal_my_timesheets" model="ir.ui.view">
+            <field name="name">My Timesheets</field>
+            <field name="active" eval="False" />
+        </record>
+
+    </data>
+</odoo>
