@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_closing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210508\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-25 09:57+0000\n"
+"PO-Revision-Date: 2021-05-25 09:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__account_129
+#, python-format
+msgid "Results account"
+msgstr "Cuenta de resultados"
+
+#. module: account_closing
+#: model:ir.ui.menu,name:account_closing.lunch_account_closing_root_menu_wizard
+msgid "Account closure"
+msgstr "Cierre de cuenta"
+
+#. module: account_closing
+#: model:ir.actions.act_window,name:account_closing.account_closing_wizard_action
+msgid "Account closure"
+msgstr "Cierre de cuenta"
+
+#. module: account_closing
+#: model_terms:ir.ui.view,arch_db:account_closing.view_account_closing_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#, python-format
+msgid "Closing"
+msgstr "Generar cierre"
+
+#. module: account_closing
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_closing
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__currency_id
+#, python-format
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: account_closing
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__end_date
+#, python-format
+msgid "End date"
+msgstr "Fecha final"
+
+#. module: account_closing
+#: model_terms:ir.ui.view,arch_db:account_closing.view_account_closing_wizard
+msgid "Generate"
+msgstr "Generar"
+
+#. module: account_closing
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__is_PYG
+#, python-format
+msgid "Include PyG?"
+msgstr "Incluir PyG"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__journal_id
+#, python-format
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_closing
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: account_closing
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Ultima modificacion por"
+
+#. module: account_closing
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#, python-format
+msgid "Opening"
+msgstr "Apertura"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#, python-format
+msgid "PyG"
+msgstr "PyG"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#: model:ir.model.fields,field_description:account_closing.field_account_closing_wizard__start_date
+#, python-format
+msgid "Start date"
+msgstr "Fecha inicial"
+
+#. module: account_closing
+#: model:ir.model,name:account_closing.model_account_closing_wizard
+msgid "Wizard: Account closing"
+msgstr "Asistente: cierre de cuenta"
+
+#. module: account_closing
+#: code:addons/account_closing/wizards/account_closing_wizard.py:0
+#, python-format
+msgid "Wrong date. Start date must be less than the end date."
+msgstr "Fecha equivocada. La fecha de inicio debe ser menor que la fecha de finalización."
+
+#. module: account_closing
+#: model_terms:ir.ui.view,arch_db:account_closing.view_account_closing_wizard
+msgid "or"
+msgstr "o"

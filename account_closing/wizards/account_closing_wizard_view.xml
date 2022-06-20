@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_account_closing_wizard" model="ir.ui.view">
+        <field name="name">account.closing.wizard.form</field>
+        <field name="model">account.closing.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+					<group>
+                    	<field name="start_date"/>
+                    	<field name="end_date"/>
+                    </group>
+                    <group>
+                        <field name="company_id"/>
+                        <field name="currency_id"/>
+                        <field name="journal_id"/>
+                  	</group>
+                </group>
+                <group>
+                    <group>
+                        <field name="is_PYG"/>
+                        <field name="account_129" attrs="{
+                            'invisible': [('is_PYG', '=', False)],
+                            'required':  [('is_PYG', '=', True)]
+                        }"/>
+                    </group>
+				</group>
+                <footer>
+                    <button name="create_closing" type="object"
+                        string="Generate" class="oe_highlight"/>
+                    or
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_closing_wizard_action" model="ir.actions.act_window">
+        <field name="name">Account closure</field>
+        <field name="res_model">account.closing.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_account_closing_wizard"/>
+    </record>
+
+    <menuitem id="lunch_account_closing_root_menu_wizard" name="Account closure" 
+        parent="account.menu_finance_entries"
+        action="account_closing_wizard_action"/>
+</odoo>
