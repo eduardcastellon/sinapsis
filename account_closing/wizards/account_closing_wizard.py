@@ -114,7 +114,7 @@ class AccountClosingWizard(models.TransientModel):
         return self.env['account.move'].sudo().create({
             'currency_id': currency_id.id,
             'date': date.strftime('%Y-%m-%d'),
-            'extract_state': 'no_extract_requested',
+            # 'extract_state': 'no_extract_requested',
             'journal_id': journal_id.id,
             'type': 'entry',  # Para 14.0 'move_type'
             'state': 'draft'
